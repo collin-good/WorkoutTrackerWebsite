@@ -12,13 +12,13 @@ public class WorkoutController : ControllerBase
 
     //GET
     [HttpGet]
-    public ActionResult<List<Workout>> GetAll() => WorkoutService.GetAll();
+    public ActionResult<List<Workout>> GetAll() => WorkoutService.Instance.GetAll();
 
     //GET by ID
     [HttpGet("{id}")]
     public ActionResult<Workout> Get(int id)
     {
-        var workout = WorkoutService.Get(id);
+        var workout = WorkoutService.Instance.Get(id);
         if (workout == null)
             return NotFound();
 
@@ -26,10 +26,10 @@ public class WorkoutController : ControllerBase
     }
 
     //POST
-    [HttpPost] 
+    [HttpPost]
     public IActionResult Create(Workout workout)
     {
-        WorkoutService.Add(workout);
+        WorkoutService.Instance.Add(workout);
         return CreatedAtAction(nameof(Get), new { id = workout.Id }, workout);
     }
 
@@ -37,14 +37,14 @@ public class WorkoutController : ControllerBase
     [HttpPut]
     public IActionResult Update(int id, Workout workout)
     {
-        if (id != workout.Id) 
+        if (id != workout.Id)
             return BadRequest();
 
-        var existingWorkout = WorkoutService.Get(workout.Id);
+        var existingWorkout = WorkoutService.Instance.Get(workout.Id);
         if (existingWorkout is null)
             return NotFound();
 
-        WorkoutService.Update(workout);
+        WorkoutService.Instance.Update(workout);
         return NoContent();
     }
 
@@ -52,11 +52,11 @@ public class WorkoutController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var workout = WorkoutService.Get(id);
+        var workout = WorkoutService.Instance.Get(id);
         if (workout is null)
             return NotFound();
 
-        WorkoutService.Detete(id);
+        WorkoutService.Instance.Detete(id);
         return NoContent();
     }
 }

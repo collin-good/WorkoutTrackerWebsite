@@ -1,7 +1,10 @@
+using WorkoutTrackerWebsite.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSqlite<WorkoutContext>("Data Source=WorkoutTracker.db");
 
 var app = builder.Build();
 
@@ -15,6 +18,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.CreateDbIfNotExists();
 
 app.UseRouting();
 

@@ -1,40 +1,64 @@
+using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
+using WorkoutTrackerWebsite.Data;
 using WorkoutTrackerWebsite.Models;
 
 namespace WorkoutTrackerWebsite.Services;
 
-public static class WorkoutService
+public class WorkoutService
 {
-    static List<Workout> workouts { get; } 
+    public static WorkoutService Instance;
+    private readonly WorkoutContext _context;
 
-    static WorkoutService()
+    public WorkoutService(WorkoutContext context)
     {
-        //TODO get workouts from database
-        workouts = new();
+        if(Instance == null)
+            Instance = this;
+
+        _context = context;
     }
 
-    public static List<Workout> GetAll() => workouts;
+    public List<Workout> GetAll() => _context.Workouts
+                                             .AsNoTracking()
+                                             .ToList();
 
-    public static Workout? Get(int id) => workouts.FirstOrDefault(w => w.Id == id);
+    public Workout? Get(int id) => _context.Workouts
+                                           .AsNoTracking()
+                                           .SingleOrDefault(w => w.Id == id);
 
-    public static void Add(Workout workout) => workouts.Add(workout); 
-
-    public static void Detete(int id)
+    public Workout Add(Workout workout)
     {
-        var workout = Get(id);
-        if (workout is null)
-            return;
+        _context.Workouts.Add(workout);
+        _context.SaveChanges();
 
-        //TODO update database as well
-        workouts.Remove(workout);
+        return workout;
     }
 
-    public static void Update(Workout workout)
+    public void Detete(int id)
     {
-        var index = workouts.FindIndex(w => w.Id == workout.Id);
-        if (index == -1)
-            return;
-
-        //TODO update database as well
-        workouts[index] = workout;
+        var workoutToDelete = _context.Workouts.Find(id);
+        if(workoutToDelete is not null)
+        {
+            _context.Workouts.Remove(workoutToDelete);
+            _context.SaveChanges();
+        }
+        
     }
-}
+
+    public void Update(Workout workout)
+    {
+        var workoutToUpdate = _context.Workouts.Find(workout.Id);
+        if (workoutToUpdate is null)
+        {
+            throw new InvalidOperationException("That workout does not exist");
+        }
+
+        workoutToUpdate = workout;
+        _context.SaveChanges();
+    }
+
+    public enum WorkoutSortMethod
+    {
+        date,
+        workoutType
+    }
