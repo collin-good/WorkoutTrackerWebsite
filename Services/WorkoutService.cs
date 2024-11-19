@@ -12,7 +12,7 @@ public class WorkoutService
 
     public WorkoutService(WorkoutContext context)
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
 
         _context = context;
@@ -37,12 +37,12 @@ public class WorkoutService
     public void Detete(int id)
     {
         var workoutToDelete = _context.Workouts.Find(id);
-        if(workoutToDelete is not null)
+        if (workoutToDelete is not null)
         {
             _context.Workouts.Remove(workoutToDelete);
             _context.SaveChanges();
         }
-        
+
     }
 
     public void Update(Workout workout)
@@ -56,9 +56,10 @@ public class WorkoutService
         workoutToUpdate = workout;
         _context.SaveChanges();
     }
+}
 
-    public enum WorkoutSortMethod
-    {
-        date,
-        workoutType
-    }
+public enum WorkoutSortMethod
+{
+    date,
+    workoutType
+}
