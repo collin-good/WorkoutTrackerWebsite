@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WorkoutTrackerWebsite.Data;
 using WorkoutTrackerWebsite.Models;
 using WorkoutTrackerWebsite.Services;
 
@@ -8,17 +9,21 @@ namespace WorkoutTrackerWebsite.Controllers;
 [Route("[controller]")]
 public class WorkoutController : ControllerBase
 {
-    public WorkoutController() { }
+    WorkoutService _service;
+    public WorkoutController(WorkoutContext context)
+    {
+        _service = new WorkoutService(context);
+    }
 
     //GET
     [HttpGet]
-    public ActionResult<List<Workout>> GetAll() => WorkoutService.Instance.GetAll();
+    public ActionResult<List<Workout>> GetAll() => _service.GetSortedWorkouts();
 
     //GET by ID
     [HttpGet("{id}")]
     public ActionResult<Workout> Get(int id)
     {
-        var workout = WorkoutService.Instance.Get(id);
+        var workout = _service.Get(id);
         if (workout == null)
             return NotFound();
 
@@ -29,7 +34,7 @@ public class WorkoutController : ControllerBase
     [HttpPost]
     public IActionResult Create(Workout workout)
     {
-        WorkoutService.Instance.Add(workout);
+        _service.Add(workout);
         return CreatedAtAction(nameof(Get), new { id = workout.Id }, workout);
     }
 
@@ -40,11 +45,11 @@ public class WorkoutController : ControllerBase
         if (id != workout.Id)
             return BadRequest();
 
-        var existingWorkout = WorkoutService.Instance.Get(workout.Id);
+        var existingWorkout = _service.Get(workout.Id);
         if (existingWorkout is null)
             return NotFound();
 
-        WorkoutService.Instance.Update(workout);
+        _service.Update(workout);
         return NoContent();
     }
 
@@ -52,11 +57,11 @@ public class WorkoutController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        var workout = WorkoutService.Instance.Get(id);
+        var workout = _service.Get(id);
         if (workout is null)
             return NotFound();
 
-        WorkoutService.Instance.Detete(id);
+        _service.Detete(id);
         return NoContent();
     }
 }
