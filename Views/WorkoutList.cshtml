@@ -1,0 +1,54 @@
+﻿@page
+@using System.Globalization
+@model WorkoutTrackerWebsite.Views.WorkoutsListModel
+@{
+    ViewData["Title"] = "Workouts";
+}
+
+<body>
+    <h1>Add a new workout</h1>
+    <form method="post">
+        <label asp-for="NewWorkout.Date"></label>
+        <input asp-for="NewWorkout.Date" />
+        <span asp-validation-for="NewWorkout.Date"></span>
+
+        <label asp-for="NewWorkout.Name"></label>
+        <input asp-for="NewWorkout.Name" />
+        <span asp-validation-for="NewWorkout.Date"></span>
+
+        <label asp-for="NewWorkout.Weight"></label>
+        <input asp-for="NewWorkout.Weight" />
+        <span asp-validation-for="NewWorkout.Weight"></span>
+
+        <label asp-for="NewWorkout.Reps"></label>
+        <input asp-for="NewWorkout.Reps" />
+        <span asp-validation-for="NewWorkout.Reps"></span>
+
+        <input type="submit" value="Add Workout" />
+    </form>
+
+    <h1>Previous workouts</h1>
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Workout Name</th>
+            <th>Weight</th>
+            <th>Reps</th>
+        </thead>
+        <tbody>
+            @foreach (Workout workout in Model.WorkoutList)
+            {
+                <tr>
+                    <td>@workout.Date.ToString("d", CultureInfo.CurrentCulture)</td>
+                    <td>@workout.Name</td>
+                    <td>@workout.Weight</td>
+                    <td>@workout.Reps</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
