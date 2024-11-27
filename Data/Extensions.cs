@@ -10,6 +10,7 @@ public static class Extensions
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<WorkoutContext>();
                 context.Database.EnsureCreated();
+                DbInitializer.Initialize(context);
             }
         }
     }

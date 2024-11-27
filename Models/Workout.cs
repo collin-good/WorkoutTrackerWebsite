@@ -6,6 +6,7 @@ public class Workout
 {
     public int Id { get; set; }
     [Required]
+    [MaxLength(100)]
     public string Name { get; set; } = default!;
     [Required]
     public DateOnly Date { get; set; }

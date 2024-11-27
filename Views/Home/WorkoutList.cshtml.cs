@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using WorkoutTrackerWebsite.Models;
 using WorkoutTrackerWebsite.Services;
 
-namespace WorkoutTrackerWebsite.Views;
+namespace WorkoutTrackerWebsite.Pages;
 
 public class WorkoutsListModel : PageModel
 {
@@ -14,12 +14,17 @@ public class WorkoutsListModel : PageModel
 
     public WorkoutsListModel(WorkoutService service)
     {
-        _service = service;
+        _service = service;  
     }
 
     public void OnGet()
     {
-        WorkoutList = _service.GetSortedWorkouts();
+        WorkoutList = _service.GetSortedWorkouts() ?? [];
+    }
+
+    public List<Workout> GetWorkouts()
+    {
+        return (WorkoutList as List<Workout>) ?? [];
     }
 
     public IActionResult OnPost()

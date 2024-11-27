@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using SQLitePCL;
 using WorkoutTrackerWebsite.Data;
 using WorkoutTrackerWebsite.Models;
 
@@ -47,6 +46,7 @@ public class WorkoutService
         }
 
         workoutToUpdate = workout;
+        _context.Update(workoutToUpdate);
         _context.SaveChanges();
     }
 
@@ -59,6 +59,7 @@ public class WorkoutService
     {
         List<Workout> workouts = _context.Workouts.AsNoTracking().ToList();
         QuickSort(workouts, 0, workouts.Count() - 1);
+        
         return workouts;
 
     }

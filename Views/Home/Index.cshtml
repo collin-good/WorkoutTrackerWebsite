@@ -1,8 +1,68 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using System.Globalization
+@using WorkoutTrackerWebsite.Models;
+@model WorkoutTrackerWebsite.Pages.WorkoutsListModel
+@{
+    ViewData["Title"] = "Workout List";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
+    <h1>Add a new workout</h1>
+    <form method="post">
+        <label asp-for="NewWorkout.Date"></label>
+        <input asp-for="NewWorkout.Date" />
+        <span asp-validation-for="NewWorkout.Date"></span>
+
+        <label asp-for="NewWorkout.Name"></label>
+        <input asp-for="NewWorkout.Name" />
+        <span asp-validation-for="NewWorkout.Date"></span>
+
+        <label asp-for="NewWorkout.Weight"></label>
+        <input asp-for="NewWorkout.Weight" />
+        <span asp-validation-for="NewWorkout.Weight"></span>
+
+        <label asp-for="NewWorkout.Reps"></label>
+        <input asp-for="NewWorkout.Reps" />
+        <span asp-validation-for="NewWorkout.Reps"></span>
+
+        <label asp-for="NewWorkout.Sets"></label>
+        <input asp-for="NewWorkout.Sets" />
+        <span asp-validation-for="NewWorkout.Sets"></span>
+
+        <input type="submit" value="Add Workout" />
+    </form>
+
+    <h1>Previous workouts</h1>
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Workout Name</th>
+            <th>Weight</th>
+            <th>Reps</th>
+            <th>Sets</th>
+        </thead>
+        <tbody>
+            @try
+            {
+                Console.WriteLine(Model is null);
+                foreach (Workout workout in Model.GetWorkouts())
+                {
+                    <tr>
+                        <td>@workout.Date.ToString("d")</td>
+                        <td>@workout.Name</td>
+                        <td>@workout.Weight</td>
+                        <td>@workout.Reps</td>
+                        <td>@workout.Sets</td>
+                    </tr>
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        </tbody>
+    </table>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
