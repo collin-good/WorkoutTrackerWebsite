@@ -1,9 +1,8 @@
 ﻿@using System.Globalization
-@using WorkoutTrackerWebsite.Models;
+@using WorkoutTrackerWebsite.Models
 @model WorkoutTrackerWebsite.Pages.WorkoutsListModel
-@{
-    ViewData["Title"] = "Workout List";
-}
+
+<title>workout list</title>
 
 <body>
     <h1>Add a new workout</h1>
@@ -44,7 +43,7 @@
             @try
             {
                 Console.WriteLine(Model is null);
-                foreach (Workout workout in Model.GetWorkouts())
+                foreach (Workout? workout in Model.GetWorkouts())
                 {
                     <tr>
                         <td>@workout.Date.ToString("d")</td>
@@ -62,7 +61,6 @@
         </tbody>
     </table>
 </body>
-
-@section Scripts {
+<scripts>
     <partial name="_ValidationScriptsPartial" />
-}
+</scripts>

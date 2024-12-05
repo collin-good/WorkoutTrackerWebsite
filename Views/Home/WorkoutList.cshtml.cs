@@ -14,7 +14,7 @@ public class WorkoutsListModel : PageModel
 
     public WorkoutsListModel(WorkoutService service)
     {
-        _service = service;  
+        _service = service;
     }
 
     public void OnGet()
@@ -29,6 +29,7 @@ public class WorkoutsListModel : PageModel
 
     public IActionResult OnPost()
     {
+        Console.WriteLine("OnPost Called!");
         //makes sure NewWorkout is valid
         if (!ModelState.IsValid || NewWorkout == null)
         {
