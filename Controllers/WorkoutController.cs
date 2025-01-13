@@ -14,6 +14,10 @@ public class WorkoutController : ControllerBase
     {
         _service = new WorkoutService(context);
     }
+    public WorkoutController(IWorkoutDB context)
+    {
+        _service = new WorkoutService(context);
+    }
 
     //GET
     [HttpGet]

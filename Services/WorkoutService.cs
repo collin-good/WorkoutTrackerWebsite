@@ -6,48 +6,34 @@ namespace WorkoutTrackerWebsite.Services;
 
 public class WorkoutService
 {
-    private readonly WorkoutContext _context;
+    private readonly IWorkoutDB _context;
     private WorkoutSortMethod sortMethod = WorkoutSortMethod.date;
-
     public WorkoutService(WorkoutContext context)
     {
         _context = context;
     }
+    public WorkoutService(IWorkoutDB context)
+    {
+        _context = context;
+    }
 
-    public Workout? Get(int id) => _context.Workouts
-                                           .AsNoTracking()
-                                           .SingleOrDefault(w => w.Id == id);
+    public Workout? Get(int id) => _context.Get(id);
 
     public Workout Add(Workout workout)
     {
-        _context.Workouts.Add(workout);
-        _context.SaveChanges();
+        _context.Add(workout);
 
         return workout;
     }
 
     public void Detete(int id)
     {
-        var workoutToDelete = _context.Workouts.Find(id);
-        if (workoutToDelete is not null)
-        {
-            _context.Workouts.Remove(workoutToDelete);
-            _context.SaveChanges();
-        }
-
+        _context.Delete(id);
     }
 
     public void Update(Workout workout)
     {
-        var workoutToUpdate = _context.Workouts.Find(workout.Id);
-        if (workoutToUpdate is null)
-        {
-            throw new InvalidOperationException("That workout does not exist");
-        }
-
-        workoutToUpdate = workout;
-        _context.Update(workoutToUpdate);
-        _context.SaveChanges();
+        _context.Update(workout);
     }
 
     public void UpdateSortMethod(WorkoutSortMethod method)
@@ -57,9 +43,9 @@ public class WorkoutService
 
     public List<Workout> GetSortedWorkouts()
     {
-        List<Workout> workouts = _context.Workouts.AsNoTracking().ToList();
+        List<Workout> workouts = _context.Get();
         QuickSort(workouts, 0, workouts.Count() - 1);
-        
+
         return workouts;
 
     }
