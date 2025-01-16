@@ -9,7 +9,9 @@
       "WorkoutTrackerWebsite/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "9.0.0",
-          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0"
+          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0",
+          "Microsoft.QualityTools.Testing.Fakes": "17.12.0",
+          "Microsoft.Testing.Extensions.Fakes": "17.12.0"
         },
         "runtime": {
           "WorkoutTrackerWebsite.dll": {}
@@ -44,8 +46,8 @@
       "Microsoft.CodeAnalysis.Common/4.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
-          "System.Collections.Immutable": "7.0.0",
-          "System.Reflection.Metadata": "7.0.0",
+          "System.Collections.Immutable": "8.0.0",
+          "System.Reflection.Metadata": "8.0.0",
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
@@ -533,6 +535,225 @@
           }
         }
       },
+      "Microsoft.QualityTools.Testing.Fakes/17.12.0": {
+        "dependencies": {
+          "System.Reflection.Emit": "4.7.0",
+          "System.Security.Permissions": "7.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.QualityTools.Testing.Fakes.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "17.1200.24.57203"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/cs/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.0/de/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fr/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ja/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.0/ko/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.0/pl/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.0/pt-BR/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/ru/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.0/tr/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.0/zh-Hans/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.0/zh-Hant/Microsoft.QualityTools.Testing.Fakes.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.Testing.Extensions.Fakes/17.12.0": {
+        "dependencies": {
+          "Microsoft.QualityTools.Testing.Fakes": "17.12.0",
+          "Microsoft.Testing.Platform": "1.2.1",
+          "System.Reflection.Metadata": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Testing.Extensions.Fakes.dll": {
+            "assemblyVersion": "17.0.0.0",
+            "fileVersion": "17.1200.24.57203"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/cs/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.0/de/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fr/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ja/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.0/ko/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.0/pl/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.0/pt-BR/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/ru/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.0/tr/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.0/zh-Hans/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.0/zh-Hant/Microsoft.Testing.Extensions.Fakes.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/native/FakesInstrumentationProfiler_arm64.config": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/native/FakesInstrumentationProfiler_x64.config": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/native/FakesInstrumentationProfiler_x86.config": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/native/Microsoft.QualityTools.Testing.Fakes.Instrumentation_arm64.dll": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "17.12.0.0"
+          },
+          "runtimes/win/native/Microsoft.QualityTools.Testing.Fakes.Instrumentation_x64.dll": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "17.12.0.0"
+          },
+          "runtimes/win/native/Microsoft.QualityTools.Testing.Fakes.Instrumentation_x86.dll": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "17.12.0.0"
+          },
+          "runtimes/win/native/MicrosoftInstrumentationEngine_arm64.dll": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "15.1.0.49995"
+          },
+          "runtimes/win/native/MicrosoftInstrumentationEngine_x64.dll": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "15.1.0.49995"
+          },
+          "runtimes/win/native/MicrosoftInstrumentationEngine_x86.dll": {
+            "rid": "win",
+            "assetType": "native",
+            "fileVersion": "15.1.0.49995"
+          }
+        }
+      },
+      "Microsoft.Testing.Platform/1.2.1": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Testing.Platform.dll": {
+            "assemblyVersion": "1.2.1.0",
+            "fileVersion": "1.200.124.27106"
+          }
+        },
+        "resources": {
+          "lib/net8.0/cs/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net8.0/de/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/es/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net8.0/fr/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net8.0/it/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net8.0/ja/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net8.0/ko/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net8.0/pl/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net8.0/pt-BR/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net8.0/ru/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net8.0/tr/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net8.0/zh-Hans/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net8.0/zh-Hant/Microsoft.Testing.Platform.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/7.0.0": {
+        "runtime": {
+          "lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "Mono.TextTemplating/3.0.0": {
         "dependencies": {
           "System.CodeDom": "6.0.0"
@@ -695,7 +916,7 @@
           }
         }
       },
-      "System.Collections.Immutable/7.0.0": {},
+      "System.Collections.Immutable/8.0.0": {},
       "System.Composition/7.0.0": {
         "dependencies": {
           "System.Composition.AttributedModel": "7.0.0",
@@ -764,6 +985,25 @@
           }
         }
       },
+      "System.Drawing.Common/7.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.IO.Pipelines/9.0.0": {
         "runtime": {
           "lib/net8.0/System.IO.Pipelines.dll": {
@@ -773,12 +1013,24 @@
         }
       },
       "System.Memory/4.5.3": {},
-      "System.Reflection.Metadata/7.0.0": {
+      "System.Reflection.Emit/4.7.0": {},
+      "System.Reflection.Metadata/8.0.0": {
         "dependencies": {
-          "System.Collections.Immutable": "7.0.0"
+          "System.Collections.Immutable": "8.0.0"
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "System.Security.Permissions/7.0.0": {
+        "dependencies": {
+          "System.Windows.Extensions": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Security.Permissions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      },
       "System.Text.Encodings.Web/9.0.0": {
         "runtime": {
           "lib/net8.0/System.Text.Encodings.Web.dll": {
@@ -807,7 +1059,26 @@
           }
         }
       },
-      "System.Threading.Channels/7.0.0": {}
+      "System.Threading.Channels/7.0.0": {},
+      "System.Windows.Extensions/7.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Windows.Extensions.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net7.0/System.Windows.Extensions.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -1012,6 +1283,34 @@
       "path": "microsoft.extensions.primitives/9.0.0",
       "hashPath": "microsoft.extensions.primitives.9.0.0.nupkg.sha512"
     },
+    "Microsoft.QualityTools.Testing.Fakes/17.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-beKscMJhHSJatZKtSE9rZPDOFzLcN5btiBCt38zIJTYxz/hpJFvo0vQFEZ6Y/lW4A9510P6tNUCys8yAj1pqEw==",
+      "path": "microsoft.qualitytools.testing.fakes/17.12.0",
+      "hashPath": "microsoft.qualitytools.testing.fakes.17.12.0.nupkg.sha512"
+    },
+    "Microsoft.Testing.Extensions.Fakes/17.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-L7n+MiXtov59H6KAt+sJtSLigKsBJ17zJW7SxZt+mrTWl6uH/dyt9L5g3hMbbqxU936wojtsvnQUUxigaECiiQ==",
+      "path": "microsoft.testing.extensions.fakes/17.12.0",
+      "hashPath": "microsoft.testing.extensions.fakes.17.12.0.nupkg.sha512"
+    },
+    "Microsoft.Testing.Platform/1.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mb7irPwqjgusJ05BxuQ5KP6uofWaoDr/dfjFNItX1Q1Ntv3EDMr3CeLInrlU2PNcPwwObw4X6bZG7wJvvFjKZQ==",
+      "path": "microsoft.testing.platform/1.2.1",
+      "hashPath": "microsoft.testing.platform.1.2.1.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
+      "path": "microsoft.win32.systemevents/7.0.0",
+      "hashPath": "microsoft.win32.systemevents.7.0.0.nupkg.sha512"
+    },
     "Mono.TextTemplating/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1054,12 +1353,12 @@
       "path": "system.codedom/6.0.0",
       "hashPath": "system.codedom.6.0.0.nupkg.sha512"
     },
-    "System.Collections.Immutable/7.0.0": {
+    "System.Collections.Immutable/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
-      "path": "system.collections.immutable/7.0.0",
-      "hashPath": "system.collections.immutable.7.0.0.nupkg.sha512"
+      "sha512": "sha512-AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg==",
+      "path": "system.collections.immutable/8.0.0",
+      "hashPath": "system.collections.immutable.8.0.0.nupkg.sha512"
     },
     "System.Composition/7.0.0": {
       "type": "package",
@@ -1110,6 +1409,13 @@
       "path": "system.diagnostics.diagnosticsource/9.0.0",
       "hashPath": "system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512"
     },
+    "System.Drawing.Common/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KIX+oBU38pxkKPxvLcLfIkOV5Ien8ReN78wro7OF5/erwcmortzeFx+iBswlh2Vz6gVne0khocQudGwaO1Ey6A==",
+      "path": "system.drawing.common/7.0.0",
+      "hashPath": "system.drawing.common.7.0.0.nupkg.sha512"
+    },
     "System.IO.Pipelines/9.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1124,12 +1430,19 @@
       "path": "system.memory/4.5.3",
       "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
-    "System.Reflection.Metadata/7.0.0": {
+    "System.Reflection.Emit/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MclTG61lsD9sYdpNz9xsKBzjsmsfCtcMZYXz/IUr2zlhaTaABonlr1ESeompTgM+Xk+IwtGYU7/voh3YWB/fWw==",
-      "path": "system.reflection.metadata/7.0.0",
-      "hashPath": "system.reflection.metadata.7.0.0.nupkg.sha512"
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
+    },
+    "System.Reflection.Metadata/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ptvgrFh7PvWI8bcVqG5rsA/weWM09EnthFHR5SCnS6IN+P4mj6rE1lBDC4U8HL9/57htKAqy4KQ3bBj84cfYyQ==",
+      "path": "system.reflection.metadata/8.0.0",
+      "hashPath": "system.reflection.metadata.8.0.0.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",
@@ -1137,6 +1450,13 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "System.Security.Permissions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vmp0iRmCEno9BWiskOW5pxJ3d9n+jUqKxvX4GhLwFhnQaySZmBN2FuC0N5gjFHgyFMUjC5sfIJ8KZfoJwkcMmA==",
+      "path": "system.security.permissions/7.0.0",
+      "hashPath": "system.security.permissions.7.0.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/9.0.0": {
       "type": "package",
@@ -1158,6 +1478,13 @@
       "sha512": "sha512-qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
       "path": "system.threading.channels/7.0.0",
       "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
+    },
+    "System.Windows.Extensions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bR4qdCmssMMbo9Fatci49An5B1UaVJZHKNq70PRgzoLYIlitb8Tj7ns/Xt5Pz1CkERiTjcVBDU2y1AVrPBYkaw==",
+      "path": "system.windows.extensions/7.0.0",
+      "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
     }
   }
 }

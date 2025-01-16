@@ -1,9 +1,19 @@
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices;
 
 namespace WorkoutTrackerWebsite.Models;
 public class Workout
 {
+    public Workout() { }
+
+    public Workout(int id, string name, DateOnly date, int weight, int sets, int reps)
+    {
+        Id = id;
+        Name = name;
+        Date = date;
+        Weight = weight;
+        Sets = sets;
+        Reps = reps;
+    }
     public int Id { get; set; }
     [Required]
     [MaxLength(100)]

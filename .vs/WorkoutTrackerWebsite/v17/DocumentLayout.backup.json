@@ -3,10 +3,23 @@
   "WorkspaceRootPath": "D:\\C#\\WorkoutTrackerWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0AD9903B-8648-4320-8EAA-4457D9977AD9}|..\\WorkoutTrackerWebsite.Tests\\WorkoutTrackerWebsite.Tests.csproj|d:\\c#\\workouttrackerwebsite.tests\\workouttrackerwebsite.tests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{0AD9903B-8648-4320-8EAA-4457D9977AD9}|..\\WorkoutTrackerWebsite.Tests\\WorkoutTrackerWebsite.Tests.csproj|d:\\c#\\workouttrackerwebsite.tests\\workoutservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AD9903B-8648-4320-8EAA-4457D9977AD9}|..\\WorkoutTrackerWebsite.Tests\\WorkoutTrackerWebsite.Tests.csproj|d:\\c#\\workouttrackerwebsite.tests\\workoutservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|d:\\c#\\workouttrackerwebsite\\data\\workouttestcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|solutionrelative:data\\workouttestcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|d:\\c#\\workouttrackerwebsite\\models\\workout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|solutionrelative:models\\workout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|d:\\c#\\workouttrackerwebsite\\data\\workoutcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|solutionrelative:data\\workoutcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|d:\\c#\\workouttrackerwebsite\\services\\workoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|solutionrelative:services\\workoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D7BD209-00A0-4342-8453-FC2F53B71C9E}|WorkoutTrackerWebsite.csproj|d:\\c#\\workouttrackerwebsite\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -20,36 +33,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WorkoutTrackerWebsite.Tests",
-              "DocumentMoniker": "D:\\C#\\WorkoutTrackerWebsite.Tests\\WorkoutTrackerWebsite.Tests.csproj",
-              "RelativeDocumentMoniker": "..\\WorkoutTrackerWebsite.Tests\\WorkoutTrackerWebsite.Tests.csproj",
-              "ToolTip": "D:\\C#\\WorkoutTrackerWebsite.Tests\\WorkoutTrackerWebsite.Tests.csproj",
-              "RelativeToolTip": "..\\WorkoutTrackerWebsite.Tests\\WorkoutTrackerWebsite.Tests.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-09T22:54:27.729Z",
+              "DocumentIndex": 3,
+              "Title": "WorkoutContext.cs",
+              "DocumentMoniker": "D:\\C#\\WorkoutTrackerWebsite\\Data\\WorkoutContext.cs",
+              "RelativeDocumentMoniker": "Data\\WorkoutContext.cs",
+              "ToolTip": "D:\\C#\\WorkoutTrackerWebsite\\Data\\WorkoutContext.cs",
+              "RelativeToolTip": "Data\\WorkoutContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T23:17:49.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WorkoutService.cs",
+              "DocumentMoniker": "D:\\C#\\WorkoutTrackerWebsite\\Services\\WorkoutService.cs",
+              "RelativeDocumentMoniker": "Services\\WorkoutService.cs",
+              "ToolTip": "D:\\C#\\WorkoutTrackerWebsite\\Services\\WorkoutService.cs",
+              "RelativeToolTip": "Services\\WorkoutService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T23:14:18.402Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "WorkoutTestContext.cs",
+              "DocumentMoniker": "D:\\C#\\WorkoutTrackerWebsite\\Data\\WorkoutTestContext.cs",
+              "RelativeDocumentMoniker": "Data\\WorkoutTestContext.cs",
+              "ToolTip": "D:\\C#\\WorkoutTrackerWebsite\\Data\\WorkoutTestContext.cs",
+              "RelativeToolTip": "Data\\WorkoutTestContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T23:04:11.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Workout.cs",
+              "DocumentMoniker": "D:\\C#\\WorkoutTrackerWebsite\\Models\\Workout.cs",
+              "RelativeDocumentMoniker": "Models\\Workout.cs",
+              "ToolTip": "D:\\C#\\WorkoutTrackerWebsite\\Models\\Workout.cs",
+              "RelativeToolTip": "Models\\Workout.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T23:02:03.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "WorkoutServiceTests.cs",
               "DocumentMoniker": "D:\\C#\\WorkoutTrackerWebsite.Tests\\WorkoutServiceTests.cs",
               "RelativeDocumentMoniker": "..\\WorkoutTrackerWebsite.Tests\\WorkoutServiceTests.cs",
               "ToolTip": "D:\\C#\\WorkoutTrackerWebsite.Tests\\WorkoutServiceTests.cs",
               "RelativeToolTip": "..\\WorkoutTrackerWebsite.Tests\\WorkoutServiceTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwEIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T23:13:59.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\C#\\WorkoutTrackerWebsite\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -57,8 +110,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T23:09:29.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T23:09:29.128Z"
             }
           ]
         }
