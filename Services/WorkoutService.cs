@@ -59,10 +59,13 @@ public class WorkoutService
     /// <param name="right">The upper bound of the sort</param>
     private async void QuickSort(List<Workout> workouts, int left, int right)
     {
-        int pivot = (sortMethod == WorkoutSortMethod.date) ? await FindPivotUsingDate(workouts, left, right) : await FindPivotUsingName(workouts, left, right);
+        if (left < right)
+        {
+            int pivot = (sortMethod == WorkoutSortMethod.date) ? await FindPivotUsingDate(workouts, left, right) : await FindPivotUsingName(workouts, left, right);
 
-        QuickSort(workouts, left, pivot - 1);
-        QuickSort(workouts, pivot + 1, right);
+            QuickSort(workouts, left, pivot - 1);
+            QuickSort(workouts, pivot + 1, right);
+        }
     }
 
     private Task<int> FindPivotUsingDate(List<Workout> workouts, int left, int right)

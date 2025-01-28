@@ -7,14 +7,15 @@ namespace WorkoutTrackerWebsite.Data;
 /// </summary>
 public class WorkoutTestContext : IWorkoutDB
 {
-    private static DateOnly date = new DateOnly(2025, 1, 16);
+    private static DateOnly date1 = new DateOnly(2025, 1, 16);
+    private static DateOnly date2 = new DateOnly(2025, 1, 28);
 
     public WorkoutTestContext() { }
     public List<Workout> _testDB { get; private set; } = new List<Workout>
     {
-        new Workout(0, "Sit Ups", date, 0, 3, 12),
-        new Workout(1, "Bicep Curl", date, 20, 3, 12),
-        new Workout(2, "Calf Raise", date, 0, 3, 12)
+        new Workout(0, "Sit Ups", date1, 0, 3, 12),
+        new Workout(1, "Bicep Curl", date1, 20, 3, 12),
+        new Workout(2, "Sit Ups", date2, 0, 3, 12)
     };
 
     public void Add(Workout workout)

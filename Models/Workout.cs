@@ -25,4 +25,21 @@ public class Workout
     public int Sets { get; set; }
     [Required]
     public int Reps { get; set; }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is Workout)
+        {
+            var that = obj as Workout;
+
+            return that!.Id == this.Id &&
+                that.Name.Equals(this.Name) &&
+                that.Date.Equals(this.Date) &&
+                that.Weight == this.Weight &&
+                that.Sets == this.Sets &&
+                that.Reps == this.Reps;
+        }
+
+        return false;
+    }
 }
