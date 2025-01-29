@@ -28,7 +28,7 @@ public class WorkoutController : ControllerBase
     public ActionResult<Workout> Get(int id)
     {
         var workout = _service.Get(id);
-        if (workout == null)
+        if (workout is null)
             return NotFound();
 
         return workout;

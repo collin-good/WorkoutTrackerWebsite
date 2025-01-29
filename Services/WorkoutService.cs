@@ -47,7 +47,6 @@ public class WorkoutService
         QuickSort(workouts, 0, workouts.Count() - 1);
 
         return workouts;
-
     }
 
     /// <summary>
@@ -103,7 +102,7 @@ public class WorkoutService
 
             for (int j = left; j < right; j++)
             {
-                if (string.Compare(workouts[j].Name, pivot) < 0)
+                if (string.Compare(workouts[j].Name, pivot) <= 0)
                 {
                     i++;
                     Workout temp = workouts[i];

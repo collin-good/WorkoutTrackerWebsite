@@ -34,12 +34,22 @@ public class Workout
 
             return that!.Id == this.Id &&
                 that.Name.Equals(this.Name) &&
-                that.Date.Equals(this.Date) &&
+                that.Date == this.Date &&
                 that.Weight == this.Weight &&
                 that.Sets == this.Sets &&
                 that.Reps == this.Reps;
         }
 
         return false;
+    }
+
+    public static bool operator ==(Workout left, Workout right)
+    {
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(Workout left, Workout right)
+    {
+        return !left.Equals(right);
     }
 }

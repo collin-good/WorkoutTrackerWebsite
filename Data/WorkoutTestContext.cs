@@ -33,7 +33,7 @@ public class WorkoutTestContext : IWorkoutDB
 
     public List<Workout> Get()
     {
-        return _testDB;
+        return CopyWorkoutList();
     }
 
     public Workout? Get(int id)
@@ -50,5 +50,15 @@ public class WorkoutTestContext : IWorkoutDB
             int index = _testDB.IndexOf(workoutToUpdate);
             _testDB[index] = newWorkout;
         }
+    }
+
+    private List<Workout> CopyWorkoutList()
+    {
+        List<Workout> copy = new List<Workout>();
+
+        for(int i = 0; i < _testDB.Count; i++)
+            copy.Add(_testDB[i]);
+
+        return copy;
     }
 }
