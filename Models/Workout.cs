@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace WorkoutTrackerWebsite.Models;
-public class Workout
+public class Workout : EqualityComparer<Workout>
 {
     public Workout() { }
 
@@ -32,24 +33,57 @@ public class Workout
         {
             var that = obj as Workout;
 
-            return that!.Id == this.Id &&
-                that.Name.Equals(this.Name) &&
-                that.Date == this.Date &&
-                that.Weight == this.Weight &&
-                that.Sets == this.Sets &&
-                that.Reps == this.Reps;
+            return Id == that!.Id &&
+                   Name.Equals(that.Name) &&
+                   Date == that.Date &&
+                   Weight == that.Weight &&
+                   Sets == that.Sets &&
+                   Reps == that.Reps;
         }
 
         return false;
     }
 
+    public override bool Equals(Workout? left, Workout? right)
+    {
+        if (left is null || right is null)
+            return false;
+
+        return  left.Id == right.Id &&
+                left.Name.Equals(right.Name) &&
+                left.Date == right.Date &&
+                left.Weight == right.Weight &&
+                left.Sets == right.Sets &&
+                left.Reps == right.Reps;
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override int GetHashCode([DisallowNull] Workout obj)
+    {
+        return obj.GetHashCode();
+    }
+
     public static bool operator ==(Workout left, Workout right)
     {
-        return left.Equals(right);
+        return  left.Id == right.Id &&
+                left.Name.Equals(right.Name) &&
+                left.Date == right.Date &&
+                left.Weight == right.Weight &&
+                left.Sets == right.Sets &&
+                left.Reps == right.Reps;
     }
 
     public static bool operator !=(Workout left, Workout right)
     {
-        return !left.Equals(right);
+        return !(left.Id == right.Id &&
+                left.Name.Equals(right.Name) &&
+                left.Date == right.Date &&
+                left.Weight == right.Weight &&
+                left.Sets == right.Sets &&
+                left.Reps == right.Reps);
     }
 }
