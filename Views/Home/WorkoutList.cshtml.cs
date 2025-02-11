@@ -19,7 +19,7 @@ public class WorkoutsListModel : PageModel
 
     public void OnGet()
     {
-        WorkoutList = _service.GetSortedWorkouts() ?? [];
+        WorkoutList = _service.GetSortedWorkouts().Result ?? [];
     }
 
     public List<Workout> GetWorkouts()

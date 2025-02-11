@@ -41,12 +41,11 @@ public class WorkoutService
         sortMethod = method;
     }
 
-    public List<Workout> GetSortedWorkouts()
+    public async Task<List<Workout>> GetSortedWorkouts()
     {
         List<Workout> workouts = _context.Get();
-        QuickSort(workouts, 0, workouts.Count() - 1);
 
-        return workouts;
+        return await QuickSort(workouts, 0, workouts.Count() - 1);
     }
 
     /// <summary>
@@ -56,15 +55,19 @@ public class WorkoutService
     /// <param name="workouts">The list of workouts to sort</param>
     /// <param name="left">The lower bound of the sort</param>
     /// <param name="right">The upper bound of the sort</param>
-    private async void QuickSort(List<Workout> workouts, int left, int right)
+    private async Task<List<Workout>> QuickSort(List<Workout> workouts, int left, int right)
     {
-        if (left < right)
+        return await Task.Run(async () =>
         {
-            int pivot = (sortMethod == WorkoutSortMethod.date) ? await FindPivotUsingDate(workouts, left, right) : await FindPivotUsingName(workouts, left, right);
+            if (left < right)
+            {
+                int pivot = (sortMethod == WorkoutSortMethod.date) ? await FindPivotUsingDate(workouts, left, right) : await FindPivotUsingName(workouts, left, right);
 
-            QuickSort(workouts, left, pivot - 1);
-            QuickSort(workouts, pivot + 1, right);
-        }
+                _ = await QuickSort(workouts, left, pivot - 1);
+                _ = await QuickSort(workouts, pivot + 1, right);
+            }
+            return workouts;
+        });
     }
 
     private Task<int> FindPivotUsingDate(List<Workout> workouts, int left, int right)

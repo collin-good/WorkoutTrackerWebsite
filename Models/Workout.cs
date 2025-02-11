@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
 namespace WorkoutTrackerWebsite.Models;
-public class Workout : EqualityComparer<Workout>
+public class Workout 
 {
     public Workout() { }
 
@@ -44,46 +44,8 @@ public class Workout : EqualityComparer<Workout>
         return false;
     }
 
-    public override bool Equals(Workout? left, Workout? right)
-    {
-        if (left is null || right is null)
-            return false;
-
-        return  left.Id == right.Id &&
-                left.Name.Equals(right.Name) &&
-                left.Date == right.Date &&
-                left.Weight == right.Weight &&
-                left.Sets == right.Sets &&
-                left.Reps == right.Reps;
-    }
-
     public override int GetHashCode()
     {
         return base.GetHashCode();
-    }
-
-    public override int GetHashCode([DisallowNull] Workout obj)
-    {
-        return obj.GetHashCode();
-    }
-
-    public static bool operator ==(Workout left, Workout right)
-    {
-        return  left.Id == right.Id &&
-                left.Name.Equals(right.Name) &&
-                left.Date == right.Date &&
-                left.Weight == right.Weight &&
-                left.Sets == right.Sets &&
-                left.Reps == right.Reps;
-    }
-
-    public static bool operator !=(Workout left, Workout right)
-    {
-        return !(left.Id == right.Id &&
-                left.Name.Equals(right.Name) &&
-                left.Date == right.Date &&
-                left.Weight == right.Weight &&
-                left.Sets == right.Sets &&
-                left.Reps == right.Reps);
     }
 }

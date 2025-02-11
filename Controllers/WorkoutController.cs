@@ -21,7 +21,7 @@ public class WorkoutController : ControllerBase
 
     //GET
     [HttpGet]
-    public ActionResult<List<Workout>> GetAll() => _service.GetSortedWorkouts();
+    public ActionResult<List<Workout>> GetAll() => _service.GetSortedWorkouts().Result;
 
     //GET by ID
     [HttpGet("{id}")]
