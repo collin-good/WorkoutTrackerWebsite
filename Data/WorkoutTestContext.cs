@@ -1,3 +1,4 @@
+using System.Web;
 using WorkoutTrackerWebsite.Models;
 
 namespace WorkoutTrackerWebsite.Data;
@@ -34,6 +35,12 @@ public class WorkoutTestContext : IWorkoutDB
     public List<Workout> Get()
     {
         return CopyWorkoutList();
+    }
+
+    public List<Workout> Get(string name)
+    {
+        string sanitizedString = HttpUtility.HtmlEncode(name);
+        return _testDB.Where(w => w.Name.Contains(sanitizedString)).ToList();
     }
 
     public Workout? Get(int id)

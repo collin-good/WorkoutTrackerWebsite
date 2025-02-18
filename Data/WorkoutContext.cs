@@ -1,3 +1,4 @@
+using System.Web;
 using Microsoft.EntityFrameworkCore;
 using WorkoutTrackerWebsite.Models;
 
@@ -33,6 +34,13 @@ public class WorkoutContext : DbContext, IWorkoutDB
     public Workout? Get(int id)
     {
         return Workouts.Find(id);
+    }
+
+    public List<Workout> Get(string name)
+    {
+        string sanitizedInput = HttpUtility.HtmlEncode(name);
+
+        return Workouts.Where(w => w.Name.Contains(sanitizedInput)).AsNoTracking().ToList();
     }
 
     public void Update(Workout newWorkout)
