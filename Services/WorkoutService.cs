@@ -19,7 +19,7 @@ public class WorkoutService
 
     public Workout? Get(int id) => _context.Get(id);
 
-    public List<Workout> SearchByName(string name) => _context.Get(HttpUtility.HtmlEncode(name));
+    public List<Workout> GetByWorkoutName(string name) => _context.Get(HttpUtility.HtmlEncode(name));
 
     public Workout Add(Workout workout)
     {
