@@ -1,3 +1,4 @@
+using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutTrackerWebsite.Data;
 using WorkoutTrackerWebsite.Models;
@@ -24,7 +25,7 @@ public class WorkoutController : ControllerBase
     public ActionResult<List<Workout>> GetAll() => _service.GetSortedWorkouts().Result;
 
     //GET by ID
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public ActionResult<Workout> Get(int id)
     {
         var workout = _service.Get(id);
@@ -32,6 +33,15 @@ public class WorkoutController : ControllerBase
             return NotFound();
 
         return workout;
+    }
+
+    //GET List by name
+    [HttpGet("{name}")]
+    public ActionResult<List<Workout>> GetWorkoutsByName(string name)
+    {
+        string sanitizedString = HttpUtility.HtmlEncode(name);
+
+        return _service.SearchByName(sanitizedString);
     }
 
     //POST
