@@ -11,4 +11,4 @@
 * ASP .NET Core
 * Entity Framework (EF) Core
 * Razor Pages
-* *Blazor
+* Blazor
