@@ -26,8 +26,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\C#\WorkoutTrackerWebsite
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/C\#/WorkoutTrackerWebsite/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/C\#/WorkoutTrackerWebsite/Views/Home/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/C\#/WorkoutTrackerWebsite/Views/Home/Privacy.cshtml]

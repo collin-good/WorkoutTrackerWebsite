@@ -1,3 +1,4 @@
+using WorkoutTrackerWebsite.Controllers;
 using WorkoutTrackerWebsite.Data;
 using WorkoutTrackerWebsite.Services;
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSqlite<WorkoutContext>("Data Source=WorkoutTracker.db");
 builder.Services.AddScoped<WorkoutService>();
+builder.Services.AddSingleton<WorkoutController>();
 
 
 var app = builder.Build();

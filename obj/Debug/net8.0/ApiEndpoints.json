@@ -1,0 +1,101 @@
+[
+  {
+    "ContainingType": "WorkoutTrackerWebsite.Controllers.WorkoutController",
+    "Method": "GetAll",
+    "RelativePath": "Workout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[WorkoutTrackerWebsite.Models.Workout, WorkoutTrackerWebsite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WorkoutTrackerWebsite.Controllers.WorkoutController",
+    "Method": "Create",
+    "RelativePath": "Workout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workout",
+        "Type": "WorkoutTrackerWebsite.Models.Workout",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTrackerWebsite.Controllers.WorkoutController",
+    "Method": "Update",
+    "RelativePath": "Workout",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "workout",
+        "Type": "WorkoutTrackerWebsite.Models.Workout",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WorkoutTrackerWebsite.Controllers.WorkoutController",
+    "Method": "Get",
+    "RelativePath": "Workout/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WorkoutTrackerWebsite.Models.Workout",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WorkoutTrackerWebsite.Controllers.WorkoutController",
+    "Method": "Delete",
+    "RelativePath": "Workout/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

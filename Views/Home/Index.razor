@@ -1,6 +1,9 @@
-﻿@using System.Globalization
+﻿@page "/"
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc
+@using WorkoutTrackerWebsite.Controllers
 @using WorkoutTrackerWebsite.Models
-@model WorkoutTrackerWebsite.Pages.WorkoutsListModel
+@inject WorkoutController WorkoutController
 
 <title>workout list</title>
 
@@ -13,11 +16,6 @@
 
         <label asp-for="NewWorkout.Name"></label>
         <input asp-for="NewWorkout.Name" />
-        <span asp-validation-for="NewWorkout.Date"></span>
-
-        <label asp-for="NewWorkout.Weight"></label>
-        <input asp-for="NewWorkout.Weight" />
-        <span asp-validation-for="NewWorkout.Weight"></span>
 
         <label asp-for="NewWorkout.Reps"></label>
         <input asp-for="NewWorkout.Reps" />
@@ -40,10 +38,9 @@
             <th>Sets</th>
         </thead>
         <tbody>
-            @try
+            @if (workouts is not null && workouts.Count() is not 0)
             {
-                Console.WriteLine(Model is null);
-                foreach (Workout? workout in Model.GetWorkouts())
+                foreach (Workout? workout in workouts)
                 {
                     <tr>
                         <td>@workout.Date.ToString("d")</td>
@@ -54,9 +51,9 @@
                     </tr>
                 }
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine(e.Message);
+                <p>No workouts avalible yet</p>
             }
         </tbody>
     </table>
@@ -64,3 +61,20 @@
 <scripts>
     <partial name="_ValidationScriptsPartial" />
 </scripts>
+
+@code {
+    List<Workout>? workouts { get; set; } = new();
+    public Action? OnUpdateWorkouts;
+
+    protected override void OnInitialized()
+    {
+        OnUpdateWorkouts += UpdateWorkouts;
+        UpdateWorkouts();
+    }
+
+    public async void UpdateWorkouts()
+    {
+        ActionResult<List<Workout>> results = await WorkoutController.GetAll();
+        workouts =  results.Value;
+    }
+}

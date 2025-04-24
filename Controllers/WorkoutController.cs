@@ -22,7 +22,7 @@ public class WorkoutController : ControllerBase
 
     //GET
     [HttpGet]
-    public ActionResult<List<Workout>> GetAll() => _service.GetSortedWorkouts().Result;
+    public async Task<ActionResult<List<Workout>>> GetAll() => await _service.GetSortedWorkouts();
 
     //GET by ID
     [HttpGet("{id:int}")]
